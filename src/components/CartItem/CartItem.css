@@ -1,0 +1,36 @@
+.cart_item {
+    display: flex;
+    margin-bottom: 25px;
+}
+.cart_dish_image_div {
+    margin-right: 30px;
+}
+.cart_dish_image {
+    width: 100%;
+    max-width: 170px;
+    min-width: 170px;
+    height: 100%;
+    max-height: 100px;
+    min-height: 100px;
+}
+.cart_item_content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cart_qty_div {
+    display: flex;
+}
+
+.name_format {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .name_format {
+        min-width: none;
+        max-width: none;
+    }
+}

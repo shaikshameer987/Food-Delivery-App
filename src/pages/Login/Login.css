@@ -1,0 +1,144 @@
+.login_page {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.outer_container {
+    display: flex;
+}
+.container_left {
+    width: 50%;
+}
+
+.container_right {
+    width: 50%;
+}
+
+.container_right > img {
+    height: 100vh;
+    width: 100%;
+}
+
+.login_div {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.login_div > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand_div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.brand_logo {
+    width: 50px;
+    margin: auto;
+    margin-bottom: 6px;
+}
+
+.brand_title {
+    font-size: 24px;
+    line-height: 32px;
+    color: #F7931E;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login_heading {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.username_label, .password_label {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+.username_input, .password_input {
+    height: 40px;
+    background: #E2E8F0;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.password_input {
+    margin-bottom: 10px;
+}
+
+.login_button {
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    background-color: #F7931E;
+    outline: none;
+    border: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 25px;
+}
+.error_message {
+    color: #EF4444;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .outer_container {
+        flex-direction: column;
+        position: relative;
+    }
+    .container_left {
+        order: 1;
+        width: 100%;
+        height: 50vh;
+    }
+    .container_right {
+        width: 100%;
+        height: 45vh
+    }
+    .login_div {
+        width: 80%;
+    }
+    .brand_div {
+        display: none;
+    }
+    .login_heading {
+        text-align: left;
+    }
+    .container_right > img {
+        width: 100%;
+        height: 60%;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        position: absolute;
+        top: -50px;
+        right: -50px;
+    }
+}
