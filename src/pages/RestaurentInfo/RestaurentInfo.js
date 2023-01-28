@@ -5,7 +5,6 @@ import Footer from "../../components/Footer/Footer";
 import DishCard from "../../components/DishCard/DishCard";
 import { useParams } from "react-router-dom";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
 
 function RestaurentInfo() {
   const [restaurantInfo, setRestaurantInfo] = useState("");
@@ -13,7 +12,6 @@ function RestaurentInfo() {
   const params = useParams();
   const id = params.id;
   const cookie = Cookies.get("accessToken");
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (cookie) {
@@ -31,11 +29,6 @@ function RestaurentInfo() {
         });
     }
   }, [cookie, id]);
-  useEffect(() => {
-    if (!cookie) {
-      navigate("/login");
-    }
-  }, [navigate, cookie]);
   return (
     <main className="restaurant_info_page">
       <Header />

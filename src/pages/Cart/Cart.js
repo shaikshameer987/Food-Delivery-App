@@ -4,14 +4,10 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import CartItem from "../../components/CartItem/CartItem";
 import { useSelector } from "react-redux";
-import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const [cartTotal, setCartTotal] = useState(0);
-  const navigate = useNavigate();
-  const cookie = Cookies.get("accessToken");
 
   useEffect(() => {
     let total = 0;
@@ -23,12 +19,6 @@ function Cart() {
     handleCartTotal();
     setCartTotal(total);
   }, [cartItems]);
-
-  useEffect(() => {
-    if (!cookie) {
-      navigate("/login");
-    }
-  });
   return (
     <main>
       <Header />
