@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 function Login() {
   const [user, setUser] = useState({
@@ -9,7 +9,12 @@ function Login() {
     password: "",
   });
   const [error, setError] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const cookie = Cookies.get("accessToken");
+
+  if (cookie) {
+    return <Navigate to={"/"}/>;
+  }
 
   function handleUserInput(e) {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -23,12 +28,12 @@ function Login() {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (+(res.status_code) === 400) {
+        if (+res.status_code === 400) {
           setError(true);
         } else {
           Cookies.set("accessToken", res.jwt_token);
           setError(false);
-          navigate("/")
+          navigate("/");
         }
         //
       })

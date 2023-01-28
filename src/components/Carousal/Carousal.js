@@ -40,7 +40,7 @@ function Carousal() {
       <div className="carousal">
         {
             images.map((image,index) => (
-            <div className="image_container">
+            <div className="image_container" key={index}>
                 <img
                 src={image}
                 alt=""
